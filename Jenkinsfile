@@ -3,6 +3,9 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+  }
   stages {
     stage('Build') {
       steps {
@@ -11,7 +14,7 @@ pipeline {
     }
     stage('Login') {
       steps {
-        bat 'docker login -u="marwenerzig1" -p="mezomeinhouse"'
+        bat 'docker login -u="%DOCKERHUB_CREDENTIALS_USR%" -p="%DOCKERHUB_CREDENTIALS_PSW%"'
       }
     }
     stage('Push') {
