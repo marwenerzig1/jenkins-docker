@@ -9,17 +9,17 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        bat 'docker build -t marwenerzig1/jenkins-docker-hub .'
+        bat 'docker build -t marwenerzig1/jenkins-docker-hub:1.0 .'
       }
     }
     stage('Login') {
       steps {
-        bat 'echo %DOCKERHUB_CREDENTIALS_PSW% | docker login -u %DOCKERHUB_CREDENTIALS_USR% --password-stdin'
+        echo 'Hello world'
       }
     }
     stage('Push') {
       steps {
-        bat 'docker push marwenerzig1/jenkins-docker-hub'
+        bat 'docker push marwenerzig1/jenkins-docker-hub:1.0'
       }
     }
   }
