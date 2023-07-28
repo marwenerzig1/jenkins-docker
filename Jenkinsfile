@@ -3,9 +3,6 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
-  environment {
-    DOCKERHUB_CREDENTIALS = credentials('dockerhub-acces')
-  }
   stages {
     stage('Build') {
       steps {
