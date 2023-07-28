@@ -11,9 +11,7 @@ pipeline {
     }
     stage('Login') {
       steps {
-        bat 'set DOCKERHUB_CREDENTIALS_USR=marwenerzig1'
-        bat 'set DOCKERHUB_CREDENTIALS_PSW=mezomeinhouse'
-        bat 'docker login -u="$DOCKERHUB_CREDENTIALS_USR" -p="$DOCKERHUB_CREDENTIALS_PSW"'
+        bat 'docker login -u="marwenerzig1" -p="mezomeinhouse"'
       }
     }
     stage('Push') {
