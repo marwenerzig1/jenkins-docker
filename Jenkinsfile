@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        bat 'docker build -t marwenerzig1/jenkins-docker-hubbb .'
+        bat 'docker build -t marwenerzig1/jenkins-docker-hubbbb .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        bat 'docker push marwenerzig1/jenkins-docker-hubbb'
+        bat 'docker push marwenerzig1/jenkins-docker-hubbbb'
       }
     }
   }
